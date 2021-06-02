@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>speechRecognition</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="./speechRecognition.js"></script>
+</head>
+
+<body>
+  <h1>音声認識</h1>
+  <div class="recordingArea">
+    <div id="blink"></div>
+    <input type="button" id="recStart" class="recordBtn" onClick="recognition.start();recStart();" value="録音開始" />
+    <input type="button" id="recStop" class="recordBtn" onClick="recognition.stop();recStop();" value="録音終了" />
+    <input type="button" id="reset" class="recordBtn" onClick="reset();" value="リセット" />
+  </div>
+  <textarea id="result_text" cols="100" rows="10" readonly></textarea>
+  <div class="playArea">
+    <button id="play" class="playBtn" onClick="play()" disabled><i
+        class="material-icons">headset</i><span>再生開始</span></button>
+    <button id="stop" class="playBtn" onClick="stop()" disabled><i
+        class="material-icons">stop</i><span>再生終了</span></button>
+    <button id="halt" class="playBtn" onClick="halt()" disabled><i
+        class="material-icons">pause</i><span>一時停止</span></button>
+    <button id="restart" class="playBtn" onClick="restart()" disabled><i
+        class="material-icons">play_arrow</i><span>再開</span></button>
+  </div>
+</body>
+
+</html>
